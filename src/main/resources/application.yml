@@ -1,0 +1,26 @@
+server:
+  port: 8088
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: "/actuator"
+  endpoint:
+    beans:
+      enabled: true
+book:
+  name: Spring-in-Action
+endpoints:
+  health:
+    sensitive: true
+
+spring:
+  application:
+    name: hello-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:1111/eureka,http://peer2:1112/eureka
+
+
